@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Tips_Open_QQ">正在唤起手机QQ...</string>
+    <string name="Tips_Not_File">文件不存在！</string>
+    <string name="Tips_Not_QQ">未安装手机QQ或安装的版本不支持！</string>
+</resources>
