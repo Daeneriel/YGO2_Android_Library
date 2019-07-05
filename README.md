@@ -1,3 +1,7 @@
+YGO2_Android_Library
+---------------------
+    用于 https://github.com/Unicorn369/ygopro2
+    
 编译
 ---------------------
     ./gradlew :library:assembleRelease
