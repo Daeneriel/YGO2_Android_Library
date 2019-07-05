@@ -11,6 +11,8 @@ import android.os.Environment;
 import android.os.StrictMode;
 
 import java.io.File;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 import cn.unicorn369.library.R;
 import cn.unicorn369.library.utils.IOUtils;
@@ -37,6 +39,24 @@ public class API {
             }
         }
         return unityActivity;
+    }
+
+    //用于调用Unity代码
+    //例: doUnity("Program", "showToast", "游戏目录: " + GAME_DIR);
+    public static void doUnity(String gameObjectName, String functionName, String args) {
+        try {
+            Class<?> classtype = Class.forName("com.unity3d.player.UnityPlayer");
+            Method method = classtype.getMethod("UnitySendMessage", String.class, String.class, String.class);
+            method.invoke(classtype, gameObjectName, functionName, args);
+        } catch (ClassNotFoundException e) {
+
+        } catch (NoSuchMethodException e) {
+
+        } catch (IllegalAccessException e) {
+
+        } catch (InvocationTargetException e) {
+
+        }
     }
 
     //显示Unity发送过来的内容
